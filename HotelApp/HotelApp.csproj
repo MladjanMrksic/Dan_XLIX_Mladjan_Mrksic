@@ -97,6 +97,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="ViewModel\WorkerViewModel.cs" />
     <Compile Include="View\AddEmployeesView.xaml.cs">
       <DependentUpon>AddEmployeesView.xaml</DependentUpon>
     </Compile>
