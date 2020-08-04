@@ -82,6 +82,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDatabaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\EmployeeModel.cs" />
+    <Compile Include="Model\VacationRequestModel.cs" />
     <Compile Include="VacationRequest.cs">
       <DependentUpon>HotelDatabaseModel.tt</DependentUpon>
     </Compile>
@@ -135,7 +137,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Validation\" />
     <Folder Include="View\" />
   </ItemGroup>
