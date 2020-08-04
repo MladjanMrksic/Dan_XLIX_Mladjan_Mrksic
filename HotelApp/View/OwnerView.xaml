@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.View"
         mc:Ignorable="d"
-        Title="OwnerView" Height="450" Width="800">
+        Title="Owner View" Height="450" Width="1391.693" FontSize="14" Background="DarkSlateGray" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Border Background="CadetBlue" CornerRadius="50" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Grid.Row="3" Height="auto" Width="auto">
+                    <DataGrid Name="DataGridEmployees" ItemsSource="{Binding EmployeeList, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Employee, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HeadersVisibility="Column"
+                      AutoGenerateColumns="False" HorizontalGridLinesBrush="Black" BorderBrush="Black" Foreground="Black"
+                      FontWeight="Bold">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Employee ID" Width="auto" Binding="{Binding EmployeeID}"/>
+                            <DataGridTextColumn Header="First Name" Width="auto"  Binding="{Binding FirstName}"/>
+                            <DataGridTextColumn Header="Last Name" Width="auto"  Binding="{Binding LastName}"/>
+                            <DataGridTextColumn Header="Date of Birth" Width="auto"  Binding="{Binding DateOfBirth}"/>
+                            <DataGridTextColumn Header="Email" Width="auto" Binding="{Binding Email}"/>
+                            <DataGridTextColumn Header="Username" Width="auto"  Binding="{Binding Username}"/>
+                            <DataGridTextColumn Header="Password" Width="auto"  Binding="{Binding Password}"/>
+                            <DataGridTextColumn Header="Hotel Floor" Width="auto"  Binding="{Binding HotelFloor}"/>
+                            <DataGridTextColumn Header="Gender" Width="auto"  Binding="{Binding Gender}"/>
+                            <DataGridTextColumn Header="Citizenship" Width="auto"  Binding="{Binding Citizenship}"/>
+                            <DataGridTextColumn Header="Responsibility" Width="auto"  Binding="{Binding Responsibility}"/>
+                            <DataGridTextColumn Header="Paycheck" Width="auto"  Binding="{Binding Paycheck}"/>
+                            <DataGridTextColumn Header="Work Experience" Width="auto"  Binding="{Binding WorkExperience}"/>
+                            <DataGridTextColumn Header="Professional Qualifications" Width="auto"  Binding="{Binding ProfessionalQualifications}"/>
+                            <DataGridTemplateColumn Header="Add">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btnAdd"
+                                        Command="{Binding DataContext.Add, RelativeSource={RelativeSource FindAncestor,
+                                    AncestorType={x:Type Window}},UpdateSourceTrigger=PropertyChanged}" Content="Add"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                    <Button Name="btnLogOut" Content="Logout" Width="Auto" Height="20" HorizontalAlignment="Left" Margin="0,0,20,0"
+                Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Label x:Name="TotalPricelbl" Content="{Binding TotalPrice, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0.4" Width="147"/>
+                    <Button x:Name="btnCheckout" Content="Check Out" Width="Auto" Height="20" FontWeight="Bold" Margin="0,0,0,0.8" 
+                        Command="{Binding Checkout, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

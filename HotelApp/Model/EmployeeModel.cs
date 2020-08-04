@@ -87,6 +87,7 @@ namespace HotelApp.Model
                 using (HotelDatabaseEntities context = new HotelDatabaseEntities())
                 {
                     Employee employee = (from e in context.Employees where e.EmployeeID == ID select e).FirstOrDefault();
+                    context.VacationRequests.Remove((from r in context.VacationRequests where r.EmployeeID == employee.EmployeeID select r).FirstOrDefault());
                     context.Employees.Remove(employee);
                     context.SaveChanges();
                 }
