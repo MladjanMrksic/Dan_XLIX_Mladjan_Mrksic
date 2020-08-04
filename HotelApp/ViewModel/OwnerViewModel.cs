@@ -12,7 +12,7 @@ namespace HotelApp.ViewModel
 {
     class OwnerViewModel : ViewModelBase
     {
-        OwnerView view = new OwnerView();
+        OwnerView view;
         EmployeeModel empMod = new EmployeeModel();
 
         public OwnerViewModel(OwnerView v)
@@ -64,6 +64,52 @@ namespace HotelApp.ViewModel
             {
                 return true;
             }            
+        }
+
+        private ICommand logout;
+        public ICommand Logout
+        {
+            get
+            {
+                if (logout == null)
+                {
+                    logout = new RelayCommand(param => LogoutExecute(), param => CanLogoutExecute());
+                }
+                return logout;
+            }
+        }
+        private void LogoutExecute()
+        {
+            LoginView logout = new LoginView();
+            view.Close();
+            logout.Show();
+        }
+        private bool CanLogoutExecute()
+        {
+            return true;
+        }
+
+        private ICommand addEmployee;
+        public ICommand AddEmployee
+        {
+            get
+            {
+                if (addEmployee == null)
+                {
+                    addEmployee = new RelayCommand(param => AddEmployeeExecute(), param => CanAddEmployeeExecute());
+                }
+                return addEmployee;
+            }
+        }
+        private void AddEmployeeExecute()
+        {
+            AddEmployeesView add = new AddEmployeesView();
+            view.Close();
+            add.Show();
+        }
+        private bool CanAddEmployeeExecute()
+        {
+            return true;
         }
     }
 }

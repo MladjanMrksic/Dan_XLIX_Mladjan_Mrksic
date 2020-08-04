@@ -37,8 +37,8 @@ namespace HotelApp.ViewModel
 
         private void SubmitExecute()
         {
-            login.passwordBox.Clear();
             lv.Login(login.usernameBox.Text, login.passwordBox.Password, login);
+            login.passwordBox.Clear();
         }
 
         private bool CanSubmitExecute()

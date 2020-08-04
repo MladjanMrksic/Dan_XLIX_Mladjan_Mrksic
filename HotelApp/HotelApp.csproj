@@ -88,6 +88,7 @@
       <DependentUpon>HotelDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\LoginValidation.cs" />
+    <Compile Include="ViewModel\AddEmployeesViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\OwnerViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -96,6 +97,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="View\AddEmployeesView.xaml.cs">
+      <DependentUpon>AddEmployeesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -160,6 +164,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\AddEmployeesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
