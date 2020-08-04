@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.View"
         mc:Ignorable="d"
-        Title="ManagerView" Height="450" Width="800">
+         Title="Manager" Height="320" Width="300" FontSize="14" Background="DarkSlateGray" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Border Background="CadetBlue" CornerRadius="50" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="1" Foreground="White" Content="Manager view currently unavailable"/>
+                <Button Grid.Row="2" Grid.Column="1" Name="btnLogOut" Content="Logout" Width="Auto" Height="20" HorizontalAlignment="Center" Margin="0,0,20,0"
+                Command="{Binding Logout, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
